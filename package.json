@@ -1,0 +1,11 @@
+{
+  "name": "nodejs_typescript_template",
+  "version": "1.0.0",
+  "description": "A nodeJS template application with ExpressJS written in typescript",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

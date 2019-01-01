@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { PostController } from '../controllers/post.controller';
+import { PostController } from '../services/posts/post.controller';
 import { Routes } from './Routes';
 import { IRouteHandler } from './IRoutesHandler';
 

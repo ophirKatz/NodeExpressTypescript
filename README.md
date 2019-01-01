@@ -1,5 +1,10 @@
-A nodeJS template application with NestJS written in typescript.
+A NodeJS template application with several technologies:
+* Typescript
+* NestJS
+* MongoDB
+* Docker
+* MVC
 
-Also has a mongodb connection feature.
+Includes testing the backend classes with nestjs/testing.
 
-Will include MVC like behaviour
+This application will back a client-side Angular template application.

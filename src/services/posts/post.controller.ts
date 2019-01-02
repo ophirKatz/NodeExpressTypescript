@@ -1,8 +1,8 @@
-import { Get, Controller, Post, Put, Delete, Param, Body, Header } from '@nestjs/common';
+import { Get, Controller, Post, Put, Delete, Body, Header, Query } from '@nestjs/common';
 import { PostModel } from '../../model/PostModel';
 import { PostService } from './post.service';
-import { Consts } from 'consts/consts';
-import { Routes } from 'consts/Routes';
+import { Consts } from '../../consts/Consts';
+import { Routes } from '../../consts/Routes';
 
 @Controller()
 export class PostController {
@@ -28,18 +28,18 @@ export class PostController {
 
 	@Get(Routes.getPost)
 	@Header('Content-Type', Consts.applicationJson)
-  public async getPostById(@Param('postId') postId: string) {
+  public async getPostById(@Query('postId') postId: string) {
 		return await this.postService.getPostById(postId);
   }
 
 	@Put(Routes.updatePost)
 	@Header('Content-Type', Consts.applicationJson)
-  public async updatePost(@Param('postId') postId: string, @Body() updatedPost: PostModel) {
+  public async updatePost(@Query('postId') postId: string, @Body() updatedPost: PostModel) {
 		return await this.postService.updatePost(postId, updatedPost);
   }
 
 	@Delete(Routes.deletePost)
-  public async deletePost(@Param('postId') postId: string) {
+  public async deletePost(@Query('postId') postId: string) {
 		await this.postService.deletePost(postId);
 		return 'Post deleted successfully!';
   }

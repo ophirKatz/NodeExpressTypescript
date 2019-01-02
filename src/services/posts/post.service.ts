@@ -1,13 +1,14 @@
 import { Injectable } from '@nestjs/common';
+
 require('es6-promise').polyfill();
-import fetch from 'isomorphic-fetch';
+const fetch = require('isomorphic-fetch');
 
 import * as mongoose from 'mongoose';
 
 import { PostModel } from '../../model/PostModel';
 import { PostSchema } from '../../schema/PostSchema';
 
-import { Consts } from '../../consts/consts';
+import { Consts } from '../../consts/Consts';
 
 const Post = mongoose.model('posts', PostSchema);
 

@@ -62,6 +62,7 @@ typings/
 
 # vscode config
 tsconfig.json
+.vscode/
 
 # output directory
 out/

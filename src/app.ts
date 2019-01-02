@@ -4,7 +4,7 @@ import { NestFactory, NestApplication } from '@nestjs/core';
 import * as mongoose from 'mongoose';
 
 import { AppModule } from './module/app.module';
-import { Consts } from './consts/consts';
+import { Consts } from './consts/Consts';
 
 
 class App {

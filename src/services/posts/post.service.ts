@@ -1,12 +1,10 @@
 import { Injectable } from '@nestjs/common';
-// import fetch from 'isomorphic-fetch';
 require('es6-promise').polyfill();
-const fetch = require('isomorphic-fetch');
+import fetch from 'isomorphic-fetch';
 
 import * as mongoose from 'mongoose';
 
 import { PostModel } from '../../model/PostModel';
-import { ResultCallback, ErrorCallback } from '../../model/Callback';
 import { PostSchema } from '../../schema/PostSchema';
 
 import { Consts } from '../../consts/consts';
@@ -25,6 +23,18 @@ export class PostService {
     return Post.find({}).exec();
   }
 
+  public getPostById(postId: string) {           
+    return Post.findById(postId).exec();
+  }
+
+  public updatePost(postId: string, updatedPost: PostModel) {
+    return Post.findOneAndUpdate({ _id: postId }, updatedPost, { new: true }).exec();
+  }
+
+  public deletePost(postId: string) {
+    return Post.remove({ _id: postId }).exec();
+  }
+
   public savePostsFromJsonPlaceHolder(): string {
     fetch(Consts.jsonPlaceHolderUrl)
       .then(response => response.json())
@@ -36,17 +46,5 @@ export class PostService {
         });
       });
       return 'ok';
-  }
-
-  public getPostById(postId: string) {           
-    return Post.findById(postId).exec();
-  }
-
-  public updatePost(postId: string, updatedPost: PostModel) {
-    return Post.findOneAndUpdate({ _id: postId }, updatedPost, { new: true }).exec();
-  }
-
-  public deletePost(postId: string) {
-    return Post.remove({ _id: postId }).exec();
   }
 }

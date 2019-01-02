@@ -1,44 +1,44 @@
 import { Get, Controller, Post, Put, Delete, Param, Body, Header } from '@nestjs/common';
 import { PostModel } from '../../model/PostModel';
 import { PostService } from './post.service';
+import { Consts } from 'consts/consts';
+import { Routes } from 'consts/Routes';
 
 @Controller()
 export class PostController {
 
 	constructor(private readonly postService: PostService) {}
 
-	@Get('/savePosts')
+	@Get(Routes.savePosts)
 	public savePostsFromJsonPlaceHolder() {
 		this.postService.savePostsFromJsonPlaceHolder();
 	}
 
-	@Post('/new-post')
-	@Header('Content-Type', 'application/json')
-  public addNewPost(@Body() body) {
-		let newPost: PostModel = body;
+	@Post(Routes.addNewPost)
+	@Header('Content-Type', Consts.applicationJson)
+  public addNewPost(@Body() newPost: PostModel) {
 		this.postService.addNewPost(newPost);
   }
 
-	@Get('/posts')
-	@Header('Content-Type', 'application/json')
+	@Get(Routes.getPosts)
+	@Header('Content-Type', Consts.applicationJson)
   public async getPosts() {
 		return await this.postService.getPosts();
   }
 
-	@Get('/post/:postId')
-	@Header('Content-Type', 'application/json')
+	@Get(Routes.getPost)
+	@Header('Content-Type', Consts.applicationJson)
   public async getPostById(@Param('postId') postId: string) {
 		return await this.postService.getPostById(postId);
   }
 
-	@Put('/update-post/:postId')
-	@Header('Content-Type', 'application/json')
-  public async updatePost(@Param('postId') postId: string, @Body() body) {
-		let updatedPost: PostModel = body;
+	@Put(Routes.updatePost)
+	@Header('Content-Type', Consts.applicationJson)
+  public async updatePost(@Param('postId') postId: string, @Body() updatedPost: PostModel) {
 		return await this.postService.updatePost(postId, updatedPost);
   }
 
-	@Delete('/delete-post/:postId')
+	@Delete(Routes.deletePost)
   public async deletePost(@Param('postId') postId: string) {
 		await this.postService.deletePost(postId);
 		return 'Post deleted successfully!';

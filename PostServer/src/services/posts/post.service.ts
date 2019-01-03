@@ -5,7 +5,7 @@ const fetch = require('isomorphic-fetch');
 
 import * as mongoose from 'mongoose';
 
-import { PostModel } from '../../model/PostModel';
+import { PostModel } from '../../../../PostCommon/src/model/PostModel';
 import { PostSchema } from '../../schema/PostSchema';
 
 import { Consts } from '../../consts/Consts';

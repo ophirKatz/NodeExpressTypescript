@@ -59,3 +59,10 @@ typings/
 
 # next.js build output
 .next
+
+# vscode config
+tsconfig.json
+.vscode/
+
+# output directory
+out/

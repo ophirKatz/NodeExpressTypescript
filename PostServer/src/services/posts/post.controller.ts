@@ -1,5 +1,5 @@
 import { Get, Controller, Post, Put, Delete, Body, Header, Query } from '@nestjs/common';
-import { PostModel } from '../../model/PostModel';
+import { PostModel } from '../../../../PostCommon/src/model/PostModel';
 import { PostService } from './post.service';
 import { Consts } from '../../consts/Consts';
 import { Routes } from '../../consts/Routes';

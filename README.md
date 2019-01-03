@@ -1,10 +1,2 @@
-A NodeJS template application with several technologies:
-* Typescript
-* NestJS
-* MongoDB
-* Docker
-* MVC
-
-Includes testing the backend classes with nestjs/testing.
-
-This application will back a client-side Angular template application.
+# PostClient_AngularJS_App
+A client app written with the angularjs framework that connects to the PostServer server-side application

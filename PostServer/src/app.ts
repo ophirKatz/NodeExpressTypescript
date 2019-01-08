@@ -9,32 +9,23 @@ import { Consts } from './consts/Consts';
 
 class App {
   public app: NestApplication;
-  // public routesHandler: IRouteHandler = new RoutesHandler();
 
   constructor() {
-    // this.app = express();
-    // this.config();        
-    // this.routesHandler.configureRoutesForApplication(this.app);
     this.connectToMongoDB();
     this.bootstrap();
   }
 
   private connectToMongoDB(): void {
-    mongoose.connect(Consts.mongoDBUrl)
+    mongoose.connect(Consts.mongoDBUrl, { useNewUrlParser: true })
       .then(() => console.log('MongoDB Connected'))
       .catch(err => console.log(err));
   }
 
-  private async bootstrap() {
+  private async bootstrap(): Promise<void> {
     const app = await NestFactory.create(AppModule);
-    // app.setViewEngine('hbs');
-    await app.listen(3000);
+    app.enableCors();
+    await app.listen(3000); // TODO : Move to configuration file
   }
-
-  // private config(): void {
-  //   this.app.use(bodyParser.json());
-  //   this.app.use(bodyParser.urlencoded({ extended: false }));
-  // }
 }
 
 export default new App().app;

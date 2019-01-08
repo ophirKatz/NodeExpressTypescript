@@ -1,0 +1,5 @@
+PostServer/node_modules/
+PostClient/node_modules/
+npm-debug.log
+PostServer/.vscode/
+PostClient/.vscode/

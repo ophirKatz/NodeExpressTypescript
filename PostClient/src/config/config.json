@@ -1,0 +1,18 @@
+{
+  "devConfig": {
+    "ServerAddress": "http://localhost:80",
+    "services": {
+      "posts": {
+        "getPosts": "posts"
+      }
+    }
+  },
+  "prodConfig": {
+    "ServerAddress": "http://localhost:80",
+    "services": {
+      "posts": {
+        "getPosts": "posts"
+      }
+    }
+  }
+}

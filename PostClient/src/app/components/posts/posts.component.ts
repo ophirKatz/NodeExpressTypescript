@@ -12,16 +12,35 @@ export class PostsComponent implements OnInit {
 
   private posts: PostModel[];
 
+  private showPosts: boolean;
+
+  private spinnerVisible: boolean;
+
   constructor(private readonly postsService: PostsService) { }
 
   ngOnInit() {
-    this.getPosts();
+    this.showPosts = false;
+    this.spinnerVisible = false;
   }
 
-  public getPosts() {
+  public getPosts(): void {
+    this.showSpinner();
+    this.showPosts = true;
     this.postsService.getPosts().subscribe(
-      (data: PostModel[]) => this.posts = data
+      (data: PostModel[]) => {
+        console.log('Data arrived: ', data);
+        this.posts = data;
+        this.hideSpinner();
+      }
     );
+  }
+
+  private showSpinner(): void {
+    this.spinnerVisible = true;
+  }
+
+  private hideSpinner(): void {
+    this.spinnerVisible = false;
   }
 
 }

@@ -7,3 +7,7 @@ This PostSolution is a template for building a website using:
 ** Docker
 ** TypeScript
 ** MongoDB
+
+
+# Instructions
+In order to stop the mongodb service - sudo service mongodb stop

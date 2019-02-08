@@ -8,12 +8,14 @@ import { PostBoxComponent } from './components/post-box/post-box.component';
 import { PostsService } from './services/posts/posts.service';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
-    PostBoxComponent
+    PostBoxComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

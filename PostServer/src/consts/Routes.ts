@@ -1,5 +1,7 @@
 export class Routes {
+
   public static savePosts: string = '/savePosts';
+  public static deleteAll: string = '/deleteAll';
   
   public static addNewPost: string = '/new-post';
   public static getPosts: string = '/posts';

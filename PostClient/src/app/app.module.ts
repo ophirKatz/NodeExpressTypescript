@@ -9,6 +9,9 @@ import { PostsService } from './services/posts/posts.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { DataProvider } from './services/data/DataProvider';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,11 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [PostsService],
+  providers: [PostsService, DataProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

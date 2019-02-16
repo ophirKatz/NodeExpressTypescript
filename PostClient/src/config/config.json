@@ -3,7 +3,9 @@
     "ServerAddress": "http://localhost:80",
     "services": {
       "posts": {
-        "getPosts": "posts"
+        "getPosts": "posts",
+        "addNewPost": "new-post",
+        "updatePost": "update-post"
       }
     }
   },
@@ -11,7 +13,9 @@
     "ServerAddress": "http://localhost:80",
     "services": {
       "posts": {
-        "getPosts": "posts"
+        "getPosts": "posts",
+        "addNewPost": "new-post",
+        "updatePost": "update-post"
       }
     }
   }

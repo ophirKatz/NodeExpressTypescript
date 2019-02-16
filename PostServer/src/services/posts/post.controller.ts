@@ -16,8 +16,8 @@ export class PostController {
 
 	@Post(Routes.addNewPost)
 	@Header('Content-Type', Consts.applicationJson)
-  public addNewPost(@Body() newPost: PostModel) {
-		this.postService.addNewPost(newPost);
+  public async addNewPost(@Body() newPost: PostModel) {
+		return await this.postService.addNewPost(newPost);
   }
 
 	@Get(Routes.getPosts)
@@ -42,5 +42,10 @@ export class PostController {
   public async deletePost(@Query('postId') postId: string) {
 		await this.postService.deletePost(postId);
 		return 'Post deleted successfully!';
-  }
+	}
+	
+	@Delete(Routes.deleteAll)
+	public async deleteAllPosts() {
+		await this.postService.deleteAllPosts();
+	}
 }

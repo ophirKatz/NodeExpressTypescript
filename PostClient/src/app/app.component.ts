@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PostsService } from './services/posts/posts.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PostClient';
+
+  constructor(private readonly postsService: PostsService) {
+
+  }
+
+  private reset() {
+    console.log('reset called');
+    this.postsService.deleteAllPosts();
+  }
 }

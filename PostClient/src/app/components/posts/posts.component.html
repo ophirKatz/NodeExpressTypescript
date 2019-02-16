@@ -11,11 +11,11 @@
               <p>{{ post.title }}</p>
               <p>{{ post.body }}</p>
             </div>
-            <button class="btn btn-primary col mr-4">
+            <button class="btn btn-warning col mr-4" (click)=onEditPost(post)>
               Edit
               <span class="glyphicon glyphicon-pencil"></span>
             </button>
-            <button class="btn btn-primary col">
+            <button class="btn btn-danger col">
               Delete
               <span class="glyphicon glyphicon-trash"></span>
             </button>
